@@ -1,9 +1,18 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>MyPersonalWebPage</title>
 	<style>
+#Change1{
+    width:0px;
+    height:28px;
+    background:blue;
+    transition:width 0.5s;
+    -webkit-transition:width 0.5s;
+    -moz-transition:width 0.5s;
+    -o-transition:width 0.5s;
+}
+
   .purple-text {
     color: purple;
     font-style: monospace;
@@ -12,31 +21,25 @@
     right: 500px;
     bottom:54px;
   }
-
   h1 {
     font-family: monospace;
     font-size: 20px;
     text-align: center
-
   }
-
   p {
     font-size: 30px;
     font-family: monospace;
     text-align: center; 
   	color:purple;
   }
-
   h2{
   	font-size: 20px;
   	text-align: center;  	
 	color:blue;
   }
-
   ul {
   	text-align: center;
   }
-
   .thick-white-border {
     border-color: white;
     border-width: 1000px;
@@ -47,15 +50,12 @@
     left: 550px;
     border:4px white groove;
   }
-
   .thick-white-border2 {
     width:35px;
     position: relative;
     right: 3px;
     top: 10;
   }
-
-
   .smaller-image {
     width:200px;
     height:80;
@@ -77,10 +77,12 @@
   	left: 1100px;
   	top: -1.5px;
   }
-
   .background-image{
   	width: 100%;
   }
+  #Change1:hover{
+    width:187px;
+
 </style>
 
 
@@ -88,7 +90,7 @@
 >
 
 
-	<h1 class="purple-text">MyPersonalWebPage</h1>	
+	<h1 id="Change1">MyPersonalWebPage</h1>	
 
 <link href="https://github.com/JonathanHuang876200" rel="stylesheet" type="text/css">
 
@@ -107,12 +109,12 @@
 
 <p>Something about me:</p>	
 	
-	<h2>Studying in Chin Shin junior high school</h2>
-	<h2>Studying in Yan Ping senior high school</h2>
+	<h2>Studying in ChingShin junior high school</h2>
+	<h2>Studying in YanPing senior high school</h2>
 	<h2>Studying in Fu Jen Catholic University MIIA</h2>
 	<h2>living in Taipei</h2>
 	<h2>from Taichung </h2>
-	<h2>single</h2>>
+	
 
 <p>Birthday:</p>
 
