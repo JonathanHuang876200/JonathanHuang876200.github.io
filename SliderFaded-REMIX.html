@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<title>網頁版面設計</title>
+<style type="text/css">
+  html{height:100%;} /* 頁面的高度設置 */
+* html body{height:100%;}
+body{
+margin:0;
+  padding:0;
+  min-height:100%; /* 瀏覽器的視窗大小改變時顯示處理 */
+  position:relative; /* 相對的位置 */
+}
+div.topNav{
+  background-color:black;
+  color: white;
+  height:100px;
+}
+div.header{
+  background-color:silver;
+  height:100px; /* 高度的設置 */
+
+}
+
+
+div.wrapper{
+margin:0 5%; /* 左右邊距離 5% 版面置中 */
+}
+div.content{
+  overflow: hidden; /* 元素超出矩形格時或說重疊 */
+}
+div.leftNav{
+  width:200px; max-width:36%; /* 瀏覽按鈕區域的寬度 */
+margin:0px -20px 0px -70px;
+  float:left; /* 元素設為在左側浮動 */
+}
+
+div.footer{
+  clear:both;
+  width:100%;
+  position:absolute;
+  bottom:0; /* 設置位置於下方 */
+  height:80px;
+  background-color:silver;
+}
+span{
+  position: relative;
+  left: 580px;
+  bottom: -15px;
+
+}
+h2{
+  position: relative;
+  left: 330px;
+}
+</style>
+</head>
+
+<!--css部分-->
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!--css部分-->
+
+<body>
+
+
+<div class="topNav">
+  Top <!--(1)-->
+</div>
+
+<div class="header">
+  Beauty X Beast <!--(2)-->
+</div>
+
+
+<div class="wrapper">
+
+
+
+<div class="leftNav">
+     <!--Sidebar Overlay部分-->
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-animate-left" style="display:none;z-index:5" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button">Develope Team</a>
+  <a href="#" class="w3-bar-item w3-button">Log In</a>
+  <a href="#" class="w3-bar-item w3-button">Setting</a>
+</div>
+
+<!-- Page Content -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+<div>
+  <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>About Us</h1>
+    <p>The reason we make this website is that......</p>
+  </div>
+ </div>
+        <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+        </script>
+</div>
+<!--Sidebar Overlay部分-->
+<!--(3)-->
+    
+
+    <div class="content">
+     <!--(4 Content)-->
+      <h2>These are the shoes we sell!!</h2>
+
+      <!--Slider部分-->
+<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides w3-animate-fading" src="https://s-media-cache-ak0.pinimg.com/736x/6e/82/10/6e8210140b0e494da09481bb891a9c3f.jpg" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="https://s-media-cache-ak0.pinimg.com/736x/2f/20/3f/2f203f07d5582bf45cfa7f60583c6b68.jpg" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="https://s-media-cache-ak0.pinimg.com/736x/f7/59/6a/f7596a2d3a88d8ecb34d98719ef3c0aa.jpg" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="https://s-media-cache-ak0.pinimg.com/736x/5a/39/45/5a3945c0c59f39303e22b2ccfb696e6e.jpg" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 9000);    
+}
+</script>
+<!--Slider部分-->
+    </div>
+
+</div>
+
+<div class="footer">
+  <div class="w3-container">
+  <span class="w3-tag w3-padding w3-round-large w3-red w3-center">
+  ReadMore
+  </span>
+</div><!--(5)-->
+</div>
+
+
+
+
+</body>
+</html>

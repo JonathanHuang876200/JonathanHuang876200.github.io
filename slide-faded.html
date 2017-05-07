@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<body>
+
+<div class="w3-content w3-section" style="max-width:500px">
+
+  <img class="mySlides w3-animate-fading" src="https://s-media-cache-ak0.pinimg.com/736x/6e/82/10/6e8210140b0e494da09481bb891a9c3f.jpg" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="https://s-media-cache-ak0.pinimg.com/736x/2f/20/3f/2f203f07d5582bf45cfa7f60583c6b68.jpg" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="https://s-media-cache-ak0.pinimg.com/736x/f7/59/6a/f7596a2d3a88d8ecb34d98719ef3c0aa.jpg" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="https://s-media-cache-ak0.pinimg.com/736x/5a/39/45/5a3945c0c59f39303e22b2ccfb696e6e.jpg" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 9000);    
+}
+</script>
+
+</body>
+</html>

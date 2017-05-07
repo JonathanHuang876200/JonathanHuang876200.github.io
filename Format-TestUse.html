@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<title>網頁版面設計</title>
+<style type="text/css">
+  html{height:100%;} /* 頁面的高度設置 */
+* html body{height:100%;}
+body{
+margin:0;
+  padding:0;
+  min-height:100%; /* 瀏覽器的視窗大小改變時顯示處理 */
+  position:relative; /* 相對的位置 */
+}
+div.topNav{
+  background-color:#4d5363;
+}
+div.header{
+  background-color:#a6a9b1;
+  height:100px; /* 高度的設置 */
+}
+
+
+div.wrapper{
+margin:0 5%; /* 左右邊距離 5% 版面置中 */
+}
+div.content{
+  overflow: hidden; /* 元素超出矩形格時或說重疊 */
+}
+div.leftNav{
+  width:200px; max-width:36%; /* 瀏覽按鈕區域的寬度 */
+margin:20px 20px 0px 10px;
+  float:left; /* 元素設為在左側浮動 */
+}
+
+div.footer{
+  clear:both;
+  width:100%;
+  position:absolute;
+  bottom:0; /* 設置位置於下方 */
+  height:80px;
+  background-color:#4d5363;
+}
+</style>
+</head>
+
+
+<body>
+<div class="topNav">
+  Top <!--(1)-->
+</div>
+<div class="header">
+  Header <!--(2)-->
+</div>
+<div class="wrapper">
+  <div class="leftNav">
+    Navigation <!--(3)-->
+  </div>
+  <div class="content">
+    <!--(4 Content)-->
+    <h1>title<strong>3</strong></h1>
+    <br />
+    <div class="box-c">ReadMore</div>
+  </div>
+</div>
+<div class="footer">
+  Footer <!--(5)-->
+</div>
+</body>
+</html>

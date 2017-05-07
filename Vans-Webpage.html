@@ -6,7 +6,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <style type="text/css">
+ul {
+	background-color:black;
 
+}
  p {
  font-family: monospace;
     font-size: 15px;
@@ -22,7 +25,7 @@
  border:1px solid #b4b4b4;
  height:650px;
  margin:0 0 0 50px;
- background:silver;
+ background:white;
  }
 
  
@@ -81,7 +84,7 @@ display:block;
  }
 
 body{ 
-         background-image:url("http://wallpaperpulse.com/thumb/1276379.png");  
+         background-image:url("https://s-media-cache-ak0.pinimg.com/236x/eb/55/05/eb550509ccf7fd4b265e46f80bac4e9f.jpg");  
        }
 </style>
 </head>
@@ -89,10 +92,31 @@ body{
 <div>
   <ul class="nav nav-tabs">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Nike</a></li>
-        <li><a href="#">Adidas</a></li>
-          <li><a href="#">New Balance</a></li>
-            <li><a href="#">Converse</a></li>
+        
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Adidas<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Sock Dart</a></li>
+                <li><a href="#">Flyknit</a></li>
+                <li><a href="#">.Rosherun</a></li>
+                <li><a href="#">Air Huarache</a></li>
+                <li><a href="#">Slide</a></li>
+            </ul>
+        </li>
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Adidas<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Superstar</a></li>
+                <li><a href="#">NMD</a></li>
+                <li><a href="#">Tubular</a></li>
+                <li><a href="#">Stan Smith</a></li>
+                <li><a href="#">Slide</a></li>
+            </ul>
+        </li>
+             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Converse<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">High Top</a></li>
+                <li><a href="#">Low Top</a></li>
+            </ul>
+        </li>
              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Vans<span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="#">Old Skool</a></li>
