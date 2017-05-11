@@ -14,11 +14,12 @@ margin:0;
 div.topNav{
   background-color:black;
   color: white;
-  height:100px;
+  height:80px;
+  font-size:80px;
 }
 div.header{
   background-color:silver;
-  height:100px; /* 高度的設置 */
+  height:20px; /* 高度的設置 */
 
 }
 
@@ -28,6 +29,7 @@ margin:0 5%; /* 左右邊距離 5% 版面置中 */
 }
 div.content{
   overflow: hidden; /* 元素超出矩形格時或說重疊 */
+  background-color:#f2f2f2;
 }
 div.leftNav{
   width:200px; max-width:36%; /* 瀏覽按鈕區域的寬度 */
@@ -38,7 +40,7 @@ margin:0px -20px 0px -70px;
 div.footer{
   clear:both;
   width:100%;
-  position:absolute;
+  position:relative;
   bottom:0; /* 設置位置於下方 */
   height:80px;
   background-color:silver;
@@ -53,6 +55,18 @@ h2{
   position: relative;
   left: 330px;
 }
+
+#UA{
+height:130px;
+background: -webkit-linear-gradient(90deg,black,white);
+background: -o-linear-gradient(90deg,black,white);
+background: -moz-linear-gradient(90deg,black,white);
+background: linear-gradient(90deg,black,white);
+}
+#img{
+  size:10px;
+}
+
 </style>
 </head>
 
@@ -65,9 +79,11 @@ h2{
 <body>
 
 
-<div class="topNav">
-  Top <!--(1)-->
+<div class="topNav"  id="UA">
+  Beauty X Beast <!--(1)-->  
+  
 </div>
+
 
 <div class="header">
   Beauty X Beast <!--(2)-->
@@ -86,6 +102,7 @@ h2{
   <a href="#" class="w3-bar-item w3-button">Develope Team</a>
   <a href="#" class="w3-bar-item w3-button">Log In</a>
   <a href="#" class="w3-bar-item w3-button">Setting</a>
+  <img src="http://img.lanimg.com/tu/tuku/130220/234625-1302201G42780.jpg" style="width: 120px; position: relative;bottom: -170px; right: -75px">
 </div>
 
 <!-- Page Content -->
@@ -148,9 +165,7 @@ function carousel() {
 
 <div class="footer">
   <div class="w3-container">
-  <span class="w3-tag w3-padding w3-round-large w3-red w3-center">
-  ReadMore
-  </span>
+  <img src="http://w1.loxa.com.tw/s900830/BASSAVG/01.png" style="width:500px;position: relative;left:-200px;top:-420px">
 </div><!--(5)-->
 </div>
 
