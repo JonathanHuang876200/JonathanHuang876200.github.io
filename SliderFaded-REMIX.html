@@ -17,9 +17,13 @@ div.topNav{
   height:80px;
   font-size:80px;
 }
+
 div.header{
   background-color:silver;
-  height:20px; /* 高度的設置 */
+  height:40px; /* 高度的設置 */
+  position: relative;
+  right: 0px;
+
 
 }
 
@@ -29,14 +33,17 @@ margin:0 5%; /* 左右邊距離 5% 版面置中 */
 }
 div.content{
   overflow: hidden; /* 元素超出矩形格時或說重疊 */
-  background-color:#f2f2f2;
+  background-color:white;
 }
 div.leftNav{
   width:200px; max-width:36%; /* 瀏覽按鈕區域的寬度 */
 margin:0px -20px 0px -70px;
   float:left; /* 元素設為在左側浮動 */
 }
-
+c{
+  position: relative;
+  right: 19px;
+}
 div.footer{
   clear:both;
   width:100%;
@@ -74,19 +81,24 @@ background: linear-gradient(90deg,black,white);
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--css部分-->
 
 <body>
 
 
-<div class="topNav"  id="UA">
-  Beauty X Beast <!--(1)-->  
-  
+<div class="header w3-bar w3-light-grey w3-border">
+  <a href="#" class="w3-bar-item w3-button w3-grey"><i class="fa fa-home"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-globe"></i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i></a>
+   <!--(2)-->
 </div>
 
+<div class="topNav"  id="UA">
+  Beauty X Beast <!--(1)-->  
 
-<div class="header">
-  Beauty X Beast <!--(2)-->
 </div>
 
 
@@ -111,8 +123,10 @@ background: linear-gradient(90deg,black,white);
 <div>
   <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
   <div class="w3-container">
-    <h1>About Us</h1>
-    <p>The reason we make this website is that......</p>
+    <h1>
+    <p>A</p><p>b</p><p>o</p><p>u</p><p>t</p><p>U</p><p>s</p>
+     </h1>
+    <p></p>
   </div>
  </div>
         <script>
@@ -165,7 +179,6 @@ function carousel() {
 
 <div class="footer">
   <div class="w3-container">
-  <img src="http://w1.loxa.com.tw/s900830/BASSAVG/01.png" style="width:500px;position: relative;left:-200px;top:-420px">
 </div><!--(5)-->
 </div>
 
