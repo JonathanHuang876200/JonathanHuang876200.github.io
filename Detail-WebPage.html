@@ -4,31 +4,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
-.mySlides {display:none}
+.mySlides {display:none;position: relative;left: -200px}
 .w3-left, .w3-right, .w3-badge {cursor:pointer}
-.w3-badge {height:13px;width:13px;padding:0}
+.w3-badge {height:13px;width:13px;padding:0;position: relative;left: -200px}
+
+div{
+  position: relative;
+  left: -200px;
+}
+h2{
+  position: relative;
+  right: -500px;
+}
+h4{
+  position: relative;
+  right: -500px;
+}
+p{
+  position: relative;
+  right: -500px;
+}
 </style>
 <body>
 
 <div class="w3-container">
-  <h2>Slideshow Indicators</h2>
-  <p>An example of using buttons to indicate how many slides there are in the slideshow, and which slide the user is currently viewing.</p>
+  <h1>Slideshow Indicators</h1>
+  <p>These are the details of this series</p>
 </div>
-
-<div class="w3-content w3-display-container" style="max-width:800px">
+<div class="w3-content w3-display-container" style="max-width:450px">
   <img class="mySlides" src="https://images.vans.com/is/image/VansEU/D3HY28-HERO?$PDP-FULL-IMAGE$" style="width:100%">
   <img class="mySlides" src="https://s-media-cache-ak0.pinimg.com/originals/3e/4c/42/3e4c42e60c78e8a8bfee312138b466d8.jpg" style="width:100%">
   <img class="mySlides" src="https://images.vans.com/is/image/Vans/18GEWB-HERO?$583x583$" style="width:100%">
   <img class="mySlides" src="http://images.vans.com/is/image/Vans/3Z6IB9-HERO?$583x583$" style="width:100%">
   <div class="w3-center w3-container w3-section w3-large w3-text-grey w3-display-bottommiddle" style="width:100%">
+   
+    <h2 align="left">Vavs - Old Skool<hr></h3>
+    <h4 align="left">價錢: NT$2000</h4>
+    <p align="left">從 HTML 語法開始學起才是王道。<p>
+    <h4 align="left">顏色:</h4>
+    <p align="left">SEO 搜尋引擎最佳化是目前網路行銷中最夯的方法之一。<p>
+    <h4 align="left">尺寸: S, M, L, XL</h4>
     <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
     <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+
   </div>
 </div>
+
+
 
 <script>
 var slideIndex = 1;
@@ -58,6 +84,7 @@ function showDivs(n) {
   dots[slideIndex-1].className += " w3-grey";
 }
 </script>
+
 
 </body>
 </html> 
