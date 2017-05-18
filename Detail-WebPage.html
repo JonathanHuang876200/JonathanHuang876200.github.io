@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title>Bootstrap Navigation Bar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
-.mySlides {display:none;position: relative;left: -200px}
+.mySlides {display:none;position: relative;left: -160px}
 .w3-left, .w3-right, .w3-badge {cursor:pointer}
-.w3-badge {height:13px;width:13px;padding:0;position: relative;left: -200px}
+.w3-badge {height:13px; width:13px; padding:0; position:relative; left:-140px}
 
 div{
   position: relative;
-  left: -200px;
+  left:-160px;
+  padding-left: 40px;
 }
 h2{
   position: relative;
@@ -24,14 +32,28 @@ p{
   position: relative;
   right: -500px;
 }
+
 </style>
+</head>
 <body>
 
+    <ul class="nav nav-tabs">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">First</a></li>
+                <li><a href="#">Second</a></li>
+                <li><a href="#">Third</a></li>
+            </ul>
+        </li>
+    </ul> 
+
 <div class="w3-container">
-  <h1>Slideshow Indicators</h1>
-  <p>These are the details of this series</p>
+
 </div>
-<div class="w3-content w3-display-container" style="max-width:450px">
+<div class="w3-content w3-display-container" style="max-width:480px">
   <img class="mySlides" src="https://images.vans.com/is/image/VansEU/D3HY28-HERO?$PDP-FULL-IMAGE$" style="width:100%">
   <img class="mySlides" src="https://s-media-cache-ak0.pinimg.com/originals/3e/4c/42/3e4c42e60c78e8a8bfee312138b466d8.jpg" style="width:100%">
   <img class="mySlides" src="https://images.vans.com/is/image/Vans/18GEWB-HERO?$583x583$" style="width:100%">
@@ -39,17 +61,18 @@ p{
   <div class="w3-center w3-container w3-section w3-large w3-text-grey w3-display-bottommiddle" style="width:100%">
    
     <h2 align="left">Vavs - Old Skool<hr></h3>
-    <h4 align="left">價錢: NT$2000</h4>
-    <p align="left">從 HTML 語法開始學起才是王道。<p>
+    <h4 align="left">價錢:</h4>
+    <p align="left"> NT$2000</p>
     <h4 align="left">顏色:</h4>
-    <p align="left">SEO 搜尋引擎最佳化是目前網路行銷中最夯的方法之一。<p>
-    <h4 align="left">尺寸: S, M, L, XL</h4>
+    <p align="left">黑、 白、 粉、 棋盤<p>
+    <h4 align="left">尺寸:</h4>
+    <p align="left"> S、 M、 L、 XL</p>
     <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
     <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-gery" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-grey" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-grey" onclick="currentDiv(3)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-grey" onclick="currentDiv(4)"></span>
 
   </div>
 </div>
