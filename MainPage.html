@@ -73,6 +73,47 @@ background: linear-gradient(90deg,black,white);
 #img{
   size:10px;
 }
+#mySidenav a {
+    position: absolute;
+    left: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 13px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+    left: 0px;
+
+}
+
+#Nike {
+    top: 240px;
+    background-color: #262626;
+}
+
+#Adidas {
+    top: 300px;
+    background-color: #404040;
+}
+
+#Converse {
+    top: 360px;
+    background-color: #595959;
+}
+
+#Vans {
+    top: 420px;
+    background-color: #8c8c8c;
+}
+
+#bonus {
+    top: 480px;
+    background-color: #bfbfbf;
+}
 
 </style>
 </head>
@@ -101,6 +142,14 @@ background: linear-gradient(90deg,black,white);
 
 </div>
 
+<div id="mySidenav" class="sidenav">
+  <a href="#" id="Nike" >Nike</a>
+  <a href="#" id="Adidas">Adidas</a>
+  <a href="#" id="Converse">Converse</a>
+  <a href="#" id="Vans" >Vans</a>
+  <a href="#" id="bonus" >Bonus</a>
+
+</div>
 
 <div class="wrapper">
 
@@ -123,9 +172,7 @@ background: linear-gradient(90deg,black,white);
 <div>
   <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
   <div class="w3-container">
-    <h1>
-    <p>A</p><p>b</p><p>o</p><p>u</p><p>t</p><p>U</p><p>s</p>
-     </h1>
+
     <p></p>
   </div>
  </div>
@@ -146,14 +193,12 @@ background: linear-gradient(90deg,black,white);
 
     <div class="content">
      <!--(4 Content)-->
-      <h2>These are the shoes we sell!!</h2>
-
       <!--Slider部分-->
-<div class="w3-content w3-section" style="max-width:500px">
-  <img class="mySlides w3-animate-fading" src="https://s-media-cache-ak0.pinimg.com/736x/6e/82/10/6e8210140b0e494da09481bb891a9c3f.jpg" style="width:100%">
-  <img class="mySlides w3-animate-fading" src="https://s-media-cache-ak0.pinimg.com/736x/2f/20/3f/2f203f07d5582bf45cfa7f60583c6b68.jpg" style="width:100%">
-  <img class="mySlides w3-animate-fading" src="https://s-media-cache-ak0.pinimg.com/736x/f7/59/6a/f7596a2d3a88d8ecb34d98719ef3c0aa.jpg" style="width:100%">
-  <img class="mySlides w3-animate-fading" src="https://s-media-cache-ak0.pinimg.com/736x/5a/39/45/5a3945c0c59f39303e22b2ccfb696e6e.jpg" style="width:100%">
+<div class="w3-content w3-section" style="max-width:2000px">
+  <img class="mySlides w3-animate-fading" src="https://scontent.xx.fbcdn.net/v/t1.0-9/18519993_1787441721272660_7932245439200973516_n.jpg?oh=a873852b086391cb0e8c1d595e7936f8&oe=59BE0BD8" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="https://3.bp.blogspot.com/-uL6R-hzJf78/VxZaEAw4ZrI/AAAAAAAAFI0/bYsLhkP4ELM4MCdCWc4t9MHZIc_My_BUQCLcB/s1600/tumblr_nuor6my6QF1spnyg9o1_500.jpg" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="https://scontent.xx.fbcdn.net/v/t1.0-9/18485574_1787441724605993_4431058980475960400_n.jpg?oh=332f646b72c44a438ad39afc1e825bf0&oe=59B41CFB" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="https://scontent.xx.fbcdn.net/v/t1.0-9/18557340_1787441714605994_2635813740526544883_n.jpg?oh=a65dac4cc51a373d469c035065054f9f&oe=59A225FA" style="width:100%">
 </div>
 
 <script>
