@@ -30,7 +30,11 @@ h4{
 }
 p{
   position: relative;
-  right: -500px;
+  right: -375px;
+}
+b{
+  position: relative;
+  right: -395px;
 }
 
 </style>
@@ -100,19 +104,31 @@ p{
    
     <h2 align="left">Vans - Old Skool<hr></h3>
     <h4 align="left">價錢:NT$2000</h4>
-    <p align="left"> NT$2000</p>
-    <h4 align="left">顏色:</h4>
-    <p align="left">黑、 白、 粉、 棋盤<p>
-    <h4 align="left">尺寸:</h4>
-    <p align="left"> S、 M、 L、 XL</p>
+    
+<br>
+<b>
+<label><input type="radio" name="color" value="black">黑色</label>
+<label><input type="radio" name="color" value="white">白色</label>
+<label><input type="radio" name="color" value="pink">粉色</label>
+<label><input type="radio" name="color" value="checkerboard">棋盤格</label>
+</b>
+
+<form><br>
+<select name="pairs" style="position: relative;right: -347px">
+<option value="尺寸">選擇尺寸(cm)</option>
+ <option value="twenty-three">23.5</option>
+ <option value="twenty-four">24.5</option>
+ <option value="twenty-seven">27</option>
+</select>
+</form>
+<br>
 
 <form>
-<select name="pairs">
+<select name="pairs" style="position: relative;right: -325px">
 <option value="選擇數目">選擇數目</option>
  <option value="one">1</option>
  <option value="two">2</option>
  <option value="three">3</option>
- <option value="four">4</option>
 </select>
 </form>
 
