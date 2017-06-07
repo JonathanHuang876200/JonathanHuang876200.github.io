@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title></title>
+</head>
+<SCRIPT type="text/javascript">
+       function check()
+        {
+               
+                if(reg.name.value == "") {                
+                        alert("未輸入姓名");
+                }
+                else if(reg.tel.value == ""){                
+                        alert("未輸入完整電話號碼");
+                }
+                else if(reg.name.value == "" && reg.tel.value == ""){                
+                        alert("未輸入姓名及完整電話號碼");
+                }                   
+                else reg.submit();
+         }
+</SCRIPT>
+<body>
+<form name="reg" method="post" action="index.html">
+<p>姓名：<input name="name" type="text" size="16" /><br>
+<p>電話：<input name="tel" type="text" size="16" /><br>
+<select name="pay">
+       <option value="00">&lt;付款方式&gt;</option>
+       <option value="01">銀行轉帳</option>
+       <option value="02">貨到付款</option>
+       <option value="03">信用卡/VISA金融卡</option>
+    </select><br>
+
+<select name="get">
+       <option value="00">&lt;取貨方式&gt;</option>
+       <option value="01">郵寄</option>
+       <option value="02">宅配</option>
+       <option value="03">超商取貨</option>
+       </select><br>
+
+<input type="button" value="送出" onClick="check()" /> &nbsp;&nbsp;&nbsp;
+<input type="reset" value="清除" />
+</form>
+</body>
+</html>
