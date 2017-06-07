@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <script src="javascripts/jquery.min.js"></script>
+    <title>106年電子病歷課程</title>
+
+    <!-- Included CSS Files -->
+    <link rel="stylesheet" href="stylesheets/foundation.css">
+    <link rel="stylesheet" href="stylesheets/app.css">
+
+
+    <!--[if lt IE 9]>
+      <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+
+    <script src="javascripts/modernizr.foundation.js"></script>
+
+    <!-- IE Fix for HTML5 Tags -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--0405新增-->
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>-->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+            //var data = new Date("2016-01-01");
+            //$("#datepicker").datepicker("setDate", data);
+        });
+    </script>
+</head>
+
+<body>
+    <form name='form' id='form'>
+        <div class="row">
+            <div class="twelve columns">
+                <p align="left">
+                    <h2>Progress Note：寫檔0503</h2>
+                </p>
+            </div>
+        </div>
+
+        <!--表格：    http://www.wibibi.com/info.php?tid=116-->
+        <div class="row">
+            <div class="twelve columns">
+                <div class="row">
+                    <table border="1">
+                        <tr>
+                            <td>
+                                病歷號碼：
+                                <input type="text" name="Number" id="PatientNumber">
+                            </td>
+                            <td>
+                                姓名：
+                                <input type="text" name="Name" id="PatientName">
+                            </td>
+                            <td>
+                                床號：
+                                <input type="text" name="Bed" id="BedNumber">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Birthday">出生日期：</label>
+                                <input type="text" id="datepicker">
+                            </td>
+                            <td>
+                                性別：
+                                <input type="radio" name="sex" value="M"> 男
+                                <input type="radio" name="sex" value="F"> 女
+
+                                <br>
+                            </td>
+                            <td>
+                                主治醫師代號：
+                                <input type="text" name="Doctor" id="DoctorNumber">
+                                主治醫師：
+                                <input type="text" name="Doctor" id="Doctor">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>S：</td>
+                            <td>
+                                <textarea id="S"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>O：</td>
+                            <td>
+                                <textarea id="O"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>A：</td>
+                            <td>
+                                <textarea id="A"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P：</td>
+                            <td>
+                                <textarea id="P"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type='button' name='submit' id="btnSubmit" value='送出' />
+
+                            </td>
+
+                        </tr>
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+    <hr />
+
+
+
+    <div class="row">
+        <div class="twelve columns">
+            <hr />
+            <p align="center">©2017 謝老師課程. Design by 賴怡君.</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            //帶出病歷索引檔
+            $("#PatientNumber").change(function () {
+
+                var PatientNumber = $("#PatientNumber").val().trim();
+                
+                $.ajax({
+                    type: "POST",
+                    url: "testws.asmx/GetPatientInfo",
+                    data: JSON.stringify({ PatientNumber: PatientNumber }),
+                    contentType: 'application/json; charset=UTF-8',
+                    success: function (r) {
+                        var myObject = JSON.parse(r.d);
+                        if (myObject.length == 1) {
+                            var obj = myObject[0];
+                            debugger
+                            // 帶入病人基本資料
+                            //資料庫：姓名Name=>畫面上：姓名PatientName欄位
+                            $("#PatientName").val(obj["姓名"]);
+                            //資料庫：床號BedNO=>畫面上：床號BedNumber欄位
+                            $("#BedNumber").val(obj["床號"]);
+
+                            //資料庫：性別Gender=>畫面上：性別sex選項
+                            var dbsex = (obj["性別"]);//資料庫中存的性別
+                            $('input[type=radio][value=' + dbsex + ']').attr('checked', true);
+                            //網頁中中斷點
+                            debugger
+
+                            //資料庫中存的生日，以birth參數去接收
+                            var birth = (obj["出生日期"]);
+                            //接到生日資料，拆解成：西元年-月-日
+                            var _birth = birth.substring(0, 4) + "-" + birth.substring(4, 6) + "-" + birth.substring(6, 8);
+                            // console.log(_birth);
+
+                            //把西元年-月-日，塞入畫面上的生日欄位datepicker
+                            var data = new Date(_birth);
+                            $("#datepicker").datepicker("setDate", data);
+
+                        }
+
+                    },
+                    error: function (r) {
+                        alert(r.responseText);
+                    },
+                    failure: function (r) {
+                        alert(r.responseText);
+                    }
+                });
+            });
+
+
+            $("#btnSubmit").click(function () {
+                debugger
+                var PatientNumber = $("#PatientNumber").val();
+                //  var PatientName = $("#PatientName").val();
+                var BedNumber = $("#BedNumber").val();
+                //  var Birthday = $("#datepicker").datepicker({ dateFormat: 'dd,MM,yyyy' }).val();
+                //  var sex = $("input[name=sex]:checked").val();
+                var DoctorNumber = $("#DoctorNumber").val();
+                var Doctor = $("#Doctor").val();
+                var S = $("#S").val();
+                var O = $("#O").val();
+                var A = $("#A").val();
+                var P = $("#P").val();
+
+                //檢查欄位是否都有填寫
+                if (Check() == false) {
+                    alert("所有設定欄位皆要填寫。");
+                    return;
+                }
+                //alert('病歷號：' + PatientNumber + '\n姓名：' + PatientName + '\n床號：' + BedNumber + '\n生日：' + Birthday + '\n性別：' + sex + '\n主治醫師代號：' + DoctorNumber + '\n主治醫師：' + Doctor + '\nS：' + S + '\nO：' + O + '\nA：' + A + '\nP：' + P);
+                debugger
+                              
+                $.ajax({
+                    type: "POST",
+                    url: "testws.asmx/InsertData",
+                    data: "{ PatientNumber: '" + PatientNumber + "', BedNumber: '" + BedNumber + "' , S: '" + S + "' , O: '" + O + "' , A: '" + A + "' , P: '" + P + "' , DoctorNumber: '" + DoctorNumber + "' , Doctor: '" + Doctor + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (r) {
+                        console.log(r.d);
+                        if (r.d == 1) {
+                            alert("寫檔成功");
+                        }
+                        
+                    },
+                    error: function (r) {
+                        alert(r.responseText);
+                    },
+                    failure: function (r) {
+                        alert(r.responseText);
+                    }
+                });
+
+            });
+
+            function Check() {
+                if ($("#PatientNumber").val() == "") {
+                    return false;
+                }
+                if ($("#PatientName").val() == "") {
+                    return false;
+                }
+                if ($("#BedNumber").val() == "") {
+                    return false;
+                }
+                if ($("#Birthday").val() == "") {
+                    return false;
+                }
+                if ($("#sex").val() == "") {
+                    return false;
+                }
+                if ($("#DoctorNumber").val() == "") {
+                    return false;
+                }
+                if ($("#Doctor").val() == "") {
+                    return false;
+                }
+
+                if ($("#S").val() == "") {
+                    return false;
+                }
+                if ($("#O").val() == "") {
+                    return false;
+                }
+                if ($("#A").val() == "") {
+                    return false;
+                }
+                if ($("#P").val() == "") {
+                    return false;
+                }
+                return true;
+            }
+        });
+
+    </script>
+
+</body>
+</html>
